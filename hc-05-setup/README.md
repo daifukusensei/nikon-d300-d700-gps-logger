@@ -16,5 +16,5 @@ Proceed as follows to configure the the HC-05 Bluetooth module:
 6. Disconnect and install in the Nikon D300(s)/D700 GPS Logger
 
 Included here are additional documents that may prove as useful reference:
-- [Arduino with HC-05 (ZS-040) Bluetooth.pdf](./Arduino with HC-05 (ZS-040) Bluetooth.pdf)
+- [Arduino_with_HC-05_(ZS-040)_Bluetooth.pdf](./Arduino_with_HC-05_(ZS-040)_Bluetooth.pdf)
 - [HC-05_ATCommandSet.pdf](./HC-05_ATCommandSet.pdf)
