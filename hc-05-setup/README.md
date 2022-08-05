@@ -11,7 +11,7 @@ Proceed as follows to configure the the HC-05 Bluetooth module:
 5. Enter the following commands in sequence, to which the HC-05 should always respond OK:
 	1. AT+UART=4800,0,0
 	2. AT+PSWD="0000"
-	3. AT+ROLE=0
+	3. AT+ROLE=0 (*HC-05 will blink rapidly after changing roles, and may not respond OK- this is normal*)
 6. Disconnect and install in the Nikon D300(s)/D700 GPS Logger
 
 Please find additional documents that may prove as useful reference:
