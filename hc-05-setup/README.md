@@ -17,4 +17,4 @@ Proceed as follows to configure the the HC-05 Bluetooth module:
 
 Included here are additional documents that may prove as useful reference:
 - [Arduino with HC-05 (ZS-040) Bluetooth.pdf](./Arduino with HC-05 (ZS-040) Bluetooth.pdf)
-- [HC-05_ATCommandSet.pdf]](./HC-05_ATCommandSet.pdf)
+- [HC-05_ATCommandSet.pdf](./HC-05_ATCommandSet.pdf)
