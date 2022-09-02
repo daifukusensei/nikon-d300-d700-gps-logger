@@ -11,6 +11,8 @@
 
 #define GPSPORT Serial // serial port of the connected GPS
 
+#define BTENPIN 17 // the number of the bluetooth HC-05 module's EN pin, used for initiating AT mode to re-configure the device
+#define BTRXPIN 19 // the number of the bluetooth HC-05 module's RX pin, used for receiving AT commands issued via serial communication
 #define BTVCCPIN 16 // the number of the 2N2222 transistor's base pin, used to power on/off the bluetooth HC-05 module
 #define BTSTATEPIN 15 // the number of the bluetooth HC-05 module's state pin, used for controlling the bluetooth state LED
 #define BTNLED 8 // the number of the LED state-toggle button's pin
@@ -20,6 +22,8 @@
 #define LEDBLUETOOTH 4 // the number of the bluetooth LED
 #define LEDGPS 3 // the number of the GPS-fix LED
 #define LEDLOG 2 // the number of the logging LED (indicates writes to microSD card)
+
+SoftwareSerial BTSERIAL(20, BTRXPIN); // RX, TX on Arduino board
 
 // define button struct
 typedef struct Btn {
@@ -62,7 +66,7 @@ File logfile; // file to log to on microSD card
 
 // define constants
 const byte sdCSPin = 14; // the number of the microSD card adapter CS pin
-const unsigned short int baud = 4800; // target baud rate of the GPS module
+const unsigned short int baud = 4800; // target baud rate of the bluetooth and GPS modules
 const short int millisBtnLongPressMax = 2000; // max milliseconds before a button long-press is detected
 const short int millisLoggingInterval = 2000; // interval between writes to microSD card
 
@@ -77,7 +81,7 @@ boolean setBluetoothOn = false; // bluetooth is either OFF or ON (default OFF)
 boolean setLedOn = true; // LEDs are either ON or OFF (default ON)
 boolean setLoggingOn = false; // logging is either OFF or ON (default OFF)
 
-void setup() {
+void setup() {  
   //setDefaults();  // erase EEPROM and set to defaults
  
   // read EEPROM values into memory
@@ -90,8 +94,20 @@ void setup() {
   ledGps.millisLedOffMax = 1000;
   ledLog.millisLedOnMax = 100;
 
+  pinMode(BTENPIN, OUTPUT);
+  digitalWrite(BTENPIN, LOW); // bluetooth HC-05 module's EN pin is only used when re-configuring the device, and is thus set to LOW
   pinMode(BTVCCPIN, OUTPUT);
   digitalWrite(BTVCCPIN, LOW); // start with bluetooth HC-05 module off unless user settings (read later from EEPROM) indicate otherwise
+  pinMode(BTRXPIN, INPUT); // set Arduino's TX pin (bluetooth HC-05 module's RX pin) to input mode so as to not interfere with GPS
+                           // NMEA sentences being sent to the HC-05 module's same RX pin and the same 'line' to Arduino's serial RX--
+                           // perhaps one day I'll learn enough to figure out the issue and why input mode works
+
+  // should such settings have been lost, reset the bluetooth HC-05 module's baud rate, pin and role to what's required
+  // of slave operations by holding the waypoint-marker button when powering on-- may require a few attempts
+  if (digitalRead(btnMarker.pin) == LOW) {
+    ledBluetooth.turnOn(); // immediately turn on the bluetooth LED to indicate attempted reset of bluetooth HC-05 module
+    resetBluetooth(baud);
+  }
   
   // initialize the microSD card
   sdInit();
@@ -303,6 +319,53 @@ void setDefaults() {
   setLoggingOn = false;
 
   writeEeprom();
+}
+
+void resetBluetooth(unsigned short int baud) {
+  digitalWrite(BTVCCPIN, LOW); // turn off bluetooth HC-05 module if it's not already off
+  delay(100);
+  digitalWrite(BTENPIN, HIGH); // set bluetooth HC-05 module to AT mode by first bringing up EN pin before applying power (VCC)
+  delay(100);
+  digitalWrite(BTVCCPIN, HIGH);
+  pinMode(BTRXPIN, OUTPUT); // set Arduino's TX pin (bluetooth HC-05 module's RX pin) to output mode to enable serial communication
+  delay(250);
+
+  BTSERIAL.begin(38400); // open serial connection with bluetooth HC-05 module
+  delay(250);
+  
+  BTSERIAL.write("AT\r\n"); // oddly, after toggling BTRXPIN from input to output, an initial AT command needs to first be sent to 'wake
+                            // up' the bluetooth HC-05 module, after which subsequent commands will be accepted
+  delay(1000); // shorter delays resulted in subsequent AT commands not being acknowledged
+  switch(baud) { // send to the bluetooth HC-05 module the required AT command for changing its baud rate
+    case 4800:
+      BTSERIAL.write("AT+UART=4800,0,0\r\n");
+      break;
+
+    case 9600:
+      BTSERIAL.write("AT+UART=9600,0,0\r\n");
+      break;
+
+    default:
+      break;
+  }
+  delay(1000);
+
+  BTSERIAL.write("AT+PSWD=\"0000\"\r\n"); // reset the bluetooth HC-05 module's pin
+  delay(1000);
+
+  BTSERIAL.write("AT+ROLE=0\r\n"); // reset the bluetooth HC-05 module's role to slave
+  delay(1000);
+
+  BTSERIAL.end(); // close serial connection with bluetooth HC-05 module
+  digitalWrite(BTENPIN, LOW);
+  digitalWrite(BTVCCPIN, LOW); // cut power to bluetooth HC-05 module
+  delay(100);
+  pinMode(BTRXPIN, INPUT); // set Arduino's TX pin (bluetooth HC-05 module's RX pin) to input mode so as to not interfere with GPS
+                           // NMEA sentences being sent to the HC-05 module's same RX pin and the same 'line' to Arduino's serial RX--
+                           // perhaps such interference is due to additional voltage leaking over from Arduino when in output mode, thus
+                           // malforming the GPS feed? Perhaps one day I'll learn enough to figure out the issue and why input mode works
+  digitalWrite(BTVCCPIN, setBluetoothOn ? HIGH : LOW); // power up bluetooth HC-05 module if needed, based on user settings
+  delay(100);
 }
 
 void setGpsBaudRate(unsigned short int baud) {
