@@ -353,6 +353,9 @@ void resetBluetooth(unsigned short int baud) {
   BTSERIAL.write("AT+PSWD=\"0000\"\r\n"); // reset the bluetooth HC-05 module's pin
   delay(1000);
 
+  BTSERIAL.write("AT+NAME=Nikon-D300(S)-D700-GPS-Logger\r\n"); //set name
+  delay(1000);
+
   BTSERIAL.write("AT+ROLE=0\r\n"); // reset the bluetooth HC-05 module's role to slave
   delay(1000);
 
