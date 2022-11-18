@@ -37,7 +37,7 @@ Leveraging what I've learned from an earlier attempt at a mobile GPS-solution (s
 | 1 | 2-pin SPST rocker switch | 15mm\*10mm, in the following form-factor:<br/>![Image of 2-pin SPST rocker switch](./component-images/2-pin_SPST_rocker_switch.JPG) |
 | 1 | 3.3V/5V/12V 6-color LED board | Of the following form-factor:<br/>![Image of LED board](./component-images/6-color_LED_board.JPG) |
 | 1 | 5-position 2.5mm pitch female blade socket connector | ![Image of Blade socket connector](./component-images/blade_socket_connector.JPG) |
-| 1 | Female Mini-USB connector on 2.54mm pitch breakout board | Of the following form-factor (approximately 20mm*18mm:<br/> ![Image of Mini-USB connector](./component-images/mini_USB_connector.JPG) |
+| 1 | Female Mini-USB connector on 2.54mm pitch breakout board | Approximately 20mm*18mm, in the following form-factor:<br/> ![Image of Mini-USB connector](./component-images/mini_USB_connector.JPG) |
 | 1 | 1/4-inch tripod screw w/ head diameter no larger than 12mm | For securing Project Neptune to the camera-- the smaller and shorter the better so as to not make contact with PCB components:<br/> ![Image of tripod screw](./component-images/tripod_screw.JPG) |
 
 ## Libraries and Compile Requirements
