@@ -2,7 +2,7 @@
 This is Project Neptune: an Arduino-based GPS data-logger for Nikon D300, D300S and D700 cameras with USB and Bluetooth connectivity.
 
 <p align="center">
-  <img src="./component-images/Project_Neptune_01.JPG" width="500"/>
+  <img src="./images/Project_Neptune_mounted.JPG" width="500"/>
 </p>
 
 ## Why?
@@ -27,18 +27,18 @@ Leveraging what I've learned from an earlier attempt at a mobile GPS-solution (s
 ## Parts List
 | Quantity | Description | Note |
 | --- | --- | --- |
-| 1 | Arduino Nano/Every or clone w/ soldered straight male headers | ![Image of Arduino Nano Every](./component-images/Arduino_Nano_Every.JPG) |
-| 1 | u-blox NEO-6M GPS module w/ external antenna and built-in EEPROM, and soldered straight male header | Part GY-NEO6MV2:<br/>![Image of GY-NEO6MV2](./component-images/GY-NEO6MV2.JPG) |
-| 1 | HC-05 Bluetooth module without carrier board | ![Image of HC-05 Bluetooth module](./component-images/HC-05_Bluetooth_module.JPG) |
-| 1 | SPI microSD card adaptor w/ soldered straight male header | Of the following form-factor:<br/>![Image of SPI microSD card adaptor](./component-images/microSD_card_adaptor.JPG) |
-| 1 | 4-key button-board module w/ soldered straight male header | ![Image of 4-key button-board module](./component-images/4-key_button-board.JPG)|
-| 1 | 4-channel 3.3V/5V bi-directional logic-level-converter (LLC) w/ soldered straight male headers | Of the following form-factor:<br/>![Image of LLC](./component-images/LLC.JPG) |
-| 1 | 2N2222 NPN transistor | For turning on and off the HC-05 Bluetooth module<br/>![Image of 2N2222](./component-images/2N2222.JPG) |
-| 1 | 2-pin SPST rocker switch | 15mm\*10mm, in the following form-factor:<br/>![Image of 2-pin SPST rocker switch](./component-images/2-pin_SPST_rocker_switch.JPG) |
-| 1 | 3.3V/5V/12V 6-color LED board | Of the following form-factor:<br/>![Image of LED board](./component-images/6-color_LED_board.JPG) |
-| 1 | 5-position 2.5mm pitch female blade socket connector | ![Image of Blade socket connector](./component-images/blade_socket_connector.JPG) |
-| 1 | Female Mini-USB connector on 2.54mm pitch breakout board | Approximately 20mm*18mm, in the following form-factor:<br/> ![Image of Mini-USB connector](./component-images/mini_USB_connector.JPG) |
-| 1 | 1/4-inch tripod screw w/ head diameter no larger than 12mm | For securing Project Neptune to the camera-- the smaller and shorter the better so as to not make contact with PCB components:<br/> ![Image of tripod screw](./component-images/tripod_screw.JPG) |
+| 1 | Arduino Nano/Every or clone w/ soldered straight male headers | ![Image of Arduino Nano Every](./images/Arduino_Nano_Every.JPG) |
+| 1 | u-blox NEO-6M GPS module w/ external antenna and built-in EEPROM, and soldered straight male header | Part GY-NEO6MV2:<br/>![Image of GY-NEO6MV2](./images/GY-NEO6MV2.JPG) |
+| 1 | HC-05 Bluetooth module without carrier board | ![Image of HC-05 Bluetooth module](./images/HC-05_Bluetooth_module.JPG) |
+| 1 | SPI microSD card adaptor w/ soldered straight male header | Of the following form-factor:<br/>![Image of SPI microSD card adaptor](./images/microSD_card_adaptor.JPG) |
+| 1 | 4-key button-board module w/ soldered straight male header | ![Image of 4-key button-board module](./images/4-key_button-board.JPG)|
+| 1 | 4-channel 3.3V/5V bi-directional logic-level-converter (LLC) w/ soldered straight male headers | Of the following form-factor:<br/>![Image of LLC](./images/LLC.JPG) |
+| 1 | 2N2222 NPN transistor | For turning on and off the HC-05 Bluetooth module<br/>![Image of 2N2222](./images/2N2222.JPG) |
+| 1 | 2-pin SPST rocker switch | 15mm\*10mm, in the following form-factor:<br/>![Image of 2-pin SPST rocker switch](./images/2-pin_SPST_rocker_switch.JPG) |
+| 1 | 3.3V/5V/12V 6-color LED board | Of the following form-factor:<br/>![Image of LED board](./images/6-color_LED_board.JPG) |
+| 1 | 5-position 2.5mm pitch female blade socket connector | ![Image of Blade socket connector](./images/blade_socket_connector.JPG) |
+| 1 | Female Mini-USB connector on 2.54mm pitch breakout board | Approximately 20mm*18mm, in the following form-factor:<br/> ![Image of Mini-USB connector](./images/mini_USB_connector.JPG) |
+| 1 | 1/4-inch tripod screw w/ head diameter no larger than 12mm | For securing Project Neptune to the camera-- the smaller and shorter the better so as to not make contact with PCB components:<br/> ![Image of tripod screw](./images/tripod_screw.JPG) |
 
 ## Libraries and Compile Requirements
 Project Neptune uses the following libraries:
@@ -57,8 +57,8 @@ I had to do the following to compile against the Arduino Nano *Every*, though th
 
 ## Build Instructions
 <p align="center">
-  <img src="./component-images/Project_Pluto_complete_front.JPG" width="300"/>
-  <img src="./component-images/Project_Pluto_complete_rear.JPG" width="300"/>
+  <img src="./images/Project_Pluto_complete_front.JPG" width="300"/>
+  <img src="./images/Project_Pluto_complete_rear.JPG" width="300"/>
 </p>
 
 Due to the overlapping of the Arduino Nano Every and SPI microSD card adaptor on opposing sides of the PCB, I suggest building in the following sequence:
