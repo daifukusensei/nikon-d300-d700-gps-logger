@@ -12,10 +12,10 @@ Leveraging what I've learned from an earlier attempt at a mobile GPS-solution (s
 
 ## Features
 - Mounts to the bottom of a Nikon D300(S)/D700, and is powered directly from the camera
-- Connects to a Nikon D300(S)/D700 camera via Mini-USB-to-10-pin cable for direct geo-tagging of captured images
+- Connects via Mini-USB-to-10-pin cable for direct geo-tagging of captured images
 - Bluetooth pairing with mobile phone or NMEA 0183-compatible device/DSLR (see [Specifications and Requirements](#Specifications-and-Requirements))
 - Logging of co-ordinates to microSD card at 2-second intervals
-- Waypoint marking upon button press
+- Waypoint-marking
 - LEDs to indicate satellite and Bluetooth fix, and microSD card activity
 - Individual features (microSD logging, Bluetooth and LEDs) may be toggled on or off, with settings retained across power-cycles
 
