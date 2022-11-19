@@ -81,10 +81,7 @@ TODO
 | --- | --- |
 | **Logging Button** (**K1** on button-board; **D5** on PCB) | Toggle logging to microSD card on and off |
 | **Bluetooth Button** (**K2** on button-board; **D6** on PCB) | Toggle Bluetooth on and off |
-| **Waypoint-Marker Button** (**K3** on button-board; **D7** on PCB) | **During normal use:**<br/>- Record current co-ordinates in file on microSD card, regardless of logging state<br/>- Requires a satellite-fix and microSD card *inserted at boot*<br/><br/>**During startup:**<br/>- Re-configure HC-05 Bluetooth module as follows:
-	1. Baud rate set to 4800 as required for Nikon D300(S)/D700 connectivity
-	2. PIN set to 0000
-	3. Device name set to *Nikon-D300(S)-D700-GPS-Logger* |
+| **Waypoint-Marker Button** (**K3** on button-board; **D7** on PCB) | **During normal use:**<br/>- Record current co-ordinates in file on microSD card, regardless of logging state<br/>- Requires a satellite-fix and microSD card *inserted at boot*<br/><br/>**During startup:**<br/>- Re-configure HC-05 Bluetooth module as follows: baud rate set to 4800 as required for Nikon D300(S)/D700 connectivity; PIN set to 0000; device name set to *Nikon-D300(S)-D700-GPS-Logger* |
 | **LED Button** (**K4** on button-board; **D8** on PCB) | Toggle LEDs on and off |
 
 ### LED Behaviour
