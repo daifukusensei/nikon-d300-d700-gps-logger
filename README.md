@@ -13,7 +13,7 @@ Leveraging what I've learned from an earlier attempt at a mobile GPS-solution (s
 ## Features
 - Mounts to the bottom of a Nikon D300(S)/D700, and is powered directly from the camera
 - Connects via Mini-USB-to-10-pin cable for direct geo-tagging of captured images
-- Bluetooth pairing with mobile phone or NMEA 0183-compatible device/DSLR (see [Specifications and Requirements](#Specifications-and-Requirements))
+- Bluetooth pairing with mobile phone or Serial Port Profile (SPP)NMEA 0183-compatible device/DSLR with PIN/passkey 0000
 - Logging of co-ordinates to microSD card at 2-second intervals
 - Waypoint-marking
 - LEDs to indicate satellite and Bluetooth fix, and microSD card activity
@@ -58,12 +58,7 @@ I had to do the following to compile against the Arduino Nano *Every*, though th
 ## Build Instructions
 TODO
 
-## Operating Instructions
-### Specifications and Requirements
-- u-blox NEO-6M GPS and HC-05 Bluetooth modules operate at 4800 baud, for Nikon DLSR-compatibility
-- Pairs with any Bluetooth Serial Port Profile (SPP) NMEA 0183-compatible device with PIN/passkey 0000
-- microSD card required for logging and waypoint-marking
-- When logging is enabled, co-ordinates are written to microSD card at 2-second intervals
+## Operations
 
 ### Startup Sequence
 1. Any user-changed settings are restored from EEPROM
