@@ -8,7 +8,7 @@ This is Project Neptune: an Arduino-based GPS data-logger for Nikon D300, D300S 
 ## Why?
 I'm an active travel photographer, and use various hardware & software-based GPS solutions to geo-tag my images on the fly, all with distinct shortcomings when paired with my ancient (but lovely) Nikon D700. So, I've built a geo-tagging GPS to meet my own specific needs. (See [Disclaimer](#Disclaimer).)
 
-Leveraging what I've learned from an earlier attempt at a mobile GPS-solution (see [Project Pluto](https://github.com/daifukusensei/arduino-gps-logger), I've affectionately named this Project Neptune.
+Leveraging what I've learned from an earlier attempt at a mobile GPS-solution (see [Project Pluto](https://github.com/daifukusensei/arduino-gps-logger)), I've affectionately named this Project Neptune.
 
 ## Features
 - Mounts to the bottom of a Nikon D300(S)/D700, and is powered directly from the camera
