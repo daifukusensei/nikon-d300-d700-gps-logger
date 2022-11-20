@@ -1,7 +1,9 @@
 # Project Neptune: EasyEDA Project and Gerber File
 
 <p align="center">
-  <img src="./images/Project_Neptune_EasyEDA.JPG" width="900"/>
+  <img src="./images/Project_Neptune_EasyEDA.JPG" width="300"/>
+  <img src="./images/Project_Neptune_PCB_unpopulated_top.JPG" width="300"/>
+  <img src="./images/Project_Neptune_PCB_unpopulated_bottom.JPG" width="300"/>
 </p>
 
 - **Project-Neptune-EasyEDA-project.zip**
