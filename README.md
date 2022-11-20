@@ -3,6 +3,7 @@ This is Project Neptune: an Arduino-based GPS data-logger for Nikon D300, D300S 
 
 <p align="center">
   <img src="./images/Project_Neptune_mounted.JPG" width="500"/>
+  <img src="./pcb/images/Project_Neptune_PCB_populated_top.JPG" width="500"/>
 </p>
 
 ## Why?
@@ -57,7 +58,14 @@ I had to do the following to compile against the Arduino Nano *Every*, though th
 - Change `#define F(str) (str)` in **Arduino.h** to `#define F(str) (const __FlashStringHelper*)(str)`
 
 ## Build Instructions
-TODO
+1. Upload [nikon-d300-s-d700-gps-logger.ino](./nikon-d300-s-d700-gps-logger.ino) to Arduino Nano or Arduino Nano Every
+2. [Print a PCB](https://jlcpcb.com/) from this repository's Gerber file, with the following settings:
+    - 2 layers
+    - 1.6mm PCB thickness
+3. Due to close proximity of other components on top-side of PCB, first solder the *5-position 2.5mm pitch female blade socket connector* to the bottom-side of the board; ensure connector pins are facing toward the *centre* of the PCB
+4. Solder remaining components to their respective place on the PCB, according to their footprint
+5. Find a place to secure your GPS antenna of choice; I've elected to sandwich mine between the *3.3V/5V/12V 6-color LED board* and *SPI microSD card adaptor* using velcro (see [screenshot](./pcb/images/Project_Neptune_PCB_populated_top.JPG))
+6. 
 
 ## Operations
 
