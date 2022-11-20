@@ -38,7 +38,7 @@ Leveraging what I've learned from an earlier attempt at a mobile GPS-solution (s
 | 1 | 3.3V/5V/12V 6-color LED board | Of the following form-factor:<br/>![Image of LED board](./images/6-color_LED_board.JPG) |
 | 1 | 5-position 2.5mm pitch female blade socket connector | ![Image of Blade socket connector](./images/blade_socket_connector.JPG) |
 | 1 | Female Mini-USB connector on 2.54mm pitch breakout board | Approximately 20mm*18mm, in the following form-factor:<br/> ![Image of Mini-USB connector](./images/Mini_USB_connector.JPG) |
-| 1 | Mini-USB to 10-pin cable | For connecting Project Neptune to the Nikon D300(S)/D700. The cable used for the *Micnova GPS-N1* GPS works fine; otherwise, if making your own, USB pin 3 connects to camera's RX, and USB pin 5 to GND<br/> ![Image of Mini-USB to 10-pin cable](./images/mini_USB_connector.JPG) |
+| 1 | Mini-USB to 10-pin cable | For connecting Project Neptune to the Nikon D300(S)/D700. The cable used for the *Micnova GPS-N1* GPS works fine; otherwise, if making your own, USB pin 3 connects to camera's RX, and USB pin 5 to GND<br/> ![Image of Mini-USB to 10-pin cable](./images/Mini-USB_10-pin_cable.JPG) |
 | 1 | 1/4-inch tripod screw w/ head diameter no larger than 12mm | For securing Project Neptune to the camera-- the smaller and shorter the better so as to not make contact with PCB components:<br/> ![Image of tripod screw](./images/tripod_screw.JPG) |
 
 ## Libraries and Compile Requirements
