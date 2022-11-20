@@ -6,16 +6,16 @@ This is Project Neptune: an Arduino-based GPS data-logger for Nikon D300, D300S 
 </p>
 
 ## Why?
-I'm an active travel photographer, and use various hardware & software-based GPS solutions to geo-tag my images on the fly, all with distinct shortcomings when paired with my ancient (but lovely) Nikon D700. So, I've built a geo-tagging GPS to meet my own specific needs. (See [Disclaimer](#Disclaimer).)
+I'm an active travel photographer, and use various hardware & software-based GPS solutions to geo-tag my images, all with distinct shortcomings when paired with my ancient (but lovely) Nikon D700. So, I've built a geo-tagging device to meet my own specific needs. (See [Disclaimer](#Disclaimer).)
 
 Leveraging what I've learned from an earlier attempt at a mobile GPS-solution (see [Project Pluto](https://github.com/daifukusensei/arduino-gps-logger)), I've affectionately named this Project Neptune.
 
 ## Features
 - Mounts to the bottom of a Nikon D300(S)/D700, and is powered directly from the camera
-- Connects via Mini-USB-to-10-pin cable for direct geo-tagging of captured images
-- Bluetooth pairing with mobile phone or Serial Port Profile (SPP)NMEA 0183-compatible device/DSLR with PIN/passkey 0000
+- Connects to camera via Mini-USB to 10-pin cable, for geo-tagging of captured images directly into EXIF metadata
 - Logging of co-ordinates to microSD card at 2-second intervals
-- Waypoint-marking
+- Waypoint-marking of points of interest
+- Bluetooth pairing with mobile phone or Serial Port Profile (SPP)NMEA 0183-compatible device/DSLR with PIN/passkey 0000
 - LEDs to indicate satellite and Bluetooth fix, and microSD card activity
 - Individual features (microSD logging, Bluetooth and LEDs) may be toggled on or off, with settings retained across power-cycles
 
@@ -37,7 +37,8 @@ Leveraging what I've learned from an earlier attempt at a mobile GPS-solution (s
 | 1 | 2-pin SPST rocker switch | 15mm\*10mm, in the following form-factor:<br/>![Image of 2-pin SPST rocker switch](./images/2-pin_SPST_rocker_switch.JPG) |
 | 1 | 3.3V/5V/12V 6-color LED board | Of the following form-factor:<br/>![Image of LED board](./images/6-color_LED_board.JPG) |
 | 1 | 5-position 2.5mm pitch female blade socket connector | ![Image of Blade socket connector](./images/blade_socket_connector.JPG) |
-| 1 | Female Mini-USB connector on 2.54mm pitch breakout board | Approximately 20mm*18mm, in the following form-factor:<br/> ![Image of Mini-USB connector](./images/mini_USB_connector.JPG) |
+| 1 | Female Mini-USB connector on 2.54mm pitch breakout board | Approximately 20mm*18mm, in the following form-factor:<br/> ![Image of Mini-USB connector](./images/Mini_USB_connector.JPG) |
+| 1 | Mini-USB to 10-pin cable | For connecting Project Neptune to the Nikon D300(S)/D700. The cable used for the *Micnova GPS-N1* GPS works fine; otherwise, if making your own, USB pin 3 connects to camera's RX, and USB pin 5 to GND<br/> ![Image of Mini-USB to 10-pin cable](./images/mini_USB_connector.JPG) |
 | 1 | 1/4-inch tripod screw w/ head diameter no larger than 12mm | For securing Project Neptune to the camera-- the smaller and shorter the better so as to not make contact with PCB components:<br/> ![Image of tripod screw](./images/tripod_screw.JPG) |
 
 ## Libraries and Compile Requirements
