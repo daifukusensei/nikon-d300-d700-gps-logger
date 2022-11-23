@@ -14,10 +14,10 @@ Leveraging what I've learned from an earlier attempt at a mobile GPS-solution (s
 ## Features
 - Mounts to the bottom of a Nikon D300(S)/D700
 - Powered directly from camera independent of it being on or off
-- Connects to camera via Mini-USB to 10-pin cable, for geo-tagging of captured images directly into EXIF metadata
+- Geo-tagging of captured images directly into EXIF metadata via USB-to-10-pin cable
 - Logging of co-ordinates to microSD card at 2-second intervals
 - Waypoint-marking of points of interest
-- Bluetooth pairing with mobile phone or Serial Port Profile (SPP)NMEA 0183-compatible device/DSLR with PIN/passkey 0000
+- Bluetooth pairing with mobile phone or Serial Port Profile (SPP)NMEA 0183-compatible device/DSLR (PIN/passkey 0000)
 - LEDs to indicate satellite and Bluetooth fix, and microSD card activity
 - Individual features (microSD logging, Bluetooth and LEDs) may be toggled on or off, with settings retained across power-cycles
 
@@ -63,11 +63,12 @@ I had to do the following to compile against the Arduino Nano *Every*, though th
 2. [Print a PCB](https://jlcpcb.com/) from this repository's Gerber file, with the following settings:
     - 2 layers
     - 1.6mm PCB thickness
-3. Due to close proximity of other components on the top-side of the PCB, first solder the *5-position 2.5mm pitch female blade socket connector* to the bottom-side of the board; ensure connector's pins are facing toward the *centre* of the PCB
-4. Solder remaining components to their respective place on the PCB, according to their footprint (see [image of PCB's top-side](./pcb/images/Project_Neptune_PCB_populated_top.JPG))
+3. Due to close proximity of other components on the top-side of the PCB, first solder the *5-position 2.5mm pitch female blade socket connector* to the bottom-side of the board, ensuring connector's pins are facing toward the *centre* of the PCB
+4. Solder remaining components to their respective place on the PCB according to their footprint (see [image of PCB's top-side](./pcb/images/Project_Neptune_PCB_populated_top.JPG))
 5. Find a place to secure your GPS antenna of choice; I've elected to sandwich mine between the *3.3V/5V/12V 6-color LED board* and *SPI microSD card adaptor* using velcro (see [image of PCB's top-side](./pcb/images/Project_Neptune_PCB_populated_top.JPG))
 6. Attach Project Neptune to your Nikon D300(S)/D700 using a *1/4-inch tripod screw*. In order to ensure a secure connection, I've had to experiment with tripod screws of various sizes along with using a rubber washer (see [image of completed Project Neptune](./images/Project_Neptune_mounted_02.JPG)). Many holes are situated along the perimeter of the PCB to allow the use of M2 screws and standoffs should additional support be needed
-7. Insert a FAT32-formatted microSD card and power on Project Neptune
+7. Plug the *Mini-USB to 10-pin cable* into the PCB's USB port (**not** the Arduino's USB port!) and the camera
+8. Insert a FAT32-formatted microSD card and power on Project Neptune
 
 ## Operations
 
