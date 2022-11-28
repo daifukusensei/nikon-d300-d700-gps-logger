@@ -25,6 +25,7 @@ Leveraging what I've learned from an earlier attempt at a mobile GPS-solution (s
 - [Arduino Sketch](./nikon-d300-s-d700-gps-logger.ino) for uploading to an Arduino Nano or compatible clone
 - [Gerber file](./pcb/Project-Neptune-Gerber-PCB-v22.08.001.zip) for printing a PCB
 - [EasyEDA project](./pcb/Project-Neptune-EasyEDA-project.zip) for modifying the PCB schematic
+- [STL file](./stl/Project-Neptune-STL-cover.stl) for 3D-printing a cover
 
 ## Parts List
 | Quantity | Description | Note |
